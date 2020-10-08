@@ -1,0 +1,90 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    
+    <record model="ir.ui.view" id="li_book_list">
+      <field name="name">book list</field>
+      <field name="model">li.book</field>
+      <field name="arch" type="xml">
+        	<tree>
+	        	<field name="name"/>
+				<field name="author_ids" widget="many2many_tags" />
+				<field name="publisher_id"/>
+				<field name="date_published"/>
+        	</tree>
+      </field>
+    </record>
+
+    <record id="view_search_book" model="ir.ui.view">
+    	<field name="name">Book Filters</field>
+    	<field name="model">li.book</field>
+    	<field name="arch" type="xml">
+    		<search>
+    			<field name="publisher_id"/>
+    			<filter name="filter_inactive" string="Inactive" domain="[('active','=',True)]"/>
+    			<filter name="filter_active" string="Active" domain="[('active','=',False)]"/>
+    		</search>
+    	</field>
+    </record>
+
+    <!-- view form -->
+
+    <record model="ir.ui.view" id="li_book_form">
+    	<field name="name">book form</field>
+    	<field name="model">li.book</field>
+    	<field name="arch" type="xml">
+    		<form>
+    			<header>
+    				<button name="button_check_isbn"  string="Check ISBN" />
+    			</header>
+    			<sheet>
+    				<!-- Content goes here: -->
+    				<group name="group_top">
+			    		<group name="group_left">
+			    			<field name="name" />
+			    			<field name="author_ids" widget="many2many_tags" />
+			    			<field name="publisher_id" />
+			    			<field name="date_published" />
+			    		</group>
+
+			    		<group name="group_right">
+	    					<field name="isbn" />
+	    					<field name="active" />
+	    					<div class="container">
+	    						<div class="row">
+	    							<div class="col-sm-6">           
+	    								<field name="image" widget="image" heigt="10px"/>
+	    							</div>
+	    						</div>
+	    					</div>
+    					</group>
+    				</group>
+    			</sheet>
+    		</form>
+    	</field>
+    </record>
+
+  
+
+
+    <record model="ir.actions.act_window" id="li_book_action_window">
+      <field name="name">book</field>
+      <field name="res_model">li.book</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    
+    
+    <!-- menu categories -->
+    
+    <menuitem name="librery" id="li_book_menu_1" parent="li_library_menu_1"  action="li_library_action_window"/>
+    <menuitem name="Book" id="li_book_menu_2" parent="li_library_menu_1"  action="li_book_action_window"/>
+    
+    <!-- actions -->
+    <!--
+    <menuitem name="List" id="addons_book/book.menu_1_list" parent="addons_book/book.menu_1"
+              action="addons_book/book.action_window"/>
+    <menuitem name="Server to list" id="addons_book/book" parent="addons_book/book.menu_2"
+              action="addons_book/book.action_server"/>
+    -->
+  </data>
+</odoo>
