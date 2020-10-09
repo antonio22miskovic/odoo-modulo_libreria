@@ -35,7 +35,7 @@
     	<field name="arch" type="xml">
     		<form>
     			<header>
-    				<button name="button_check_isbn"  string="Check ISBN" />
+    				<button name="button_check_isbn" type="object" string="Check ISBN" />
     			</header>
     			<sheet>
     				<!-- Content goes here: -->
