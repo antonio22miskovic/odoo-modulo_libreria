@@ -1,0 +1,46 @@
+<!-- <?xml version="1.0"?>
+<odoo noupdate="0">
+	<function
+		model="res.users"
+			="_init_data_user_note_stages"
+		eval="[]" />
+	Data to load -->
+	<!-- <record model="res.partner" id="res_partner_huxley">
+		<field name="name">Aldous Huxley</field>
+	</record>
+	<record model="library.book" id="library_book_bnw">
+		<field name="name">Brave New World</field> -->
+		<!-- <field name="author_ids"
+			eval="[(4, ref('res_partner_huxley'))]" /> -->
+	<!-- 	<field name="author_ids"
+			eval="[(6, 0,
+					[ref('res_partner_alexandre'),
+					ref('res_partner_holger')]
+				  )]"
+		/> -->
+			<!-- <field name="date_published">1932-01-01</field> -->
+		<!-- <field 
+			name="date_published"
+			eval="(datetime.now() + timedelta(-1))" />
+		<field 
+			name="publisher_id" 
+			ref="res_partner_packt" />
+		<delete
+			model="res.partner"
+			search="[('id','=',ref('library.res_partner_daniel'))]"
+			/>
+	</record> -->
+<!-- </odoo> -->
+
+<?xml version="1.0"?>
+<odoo noupdate="0">
+<!-- Data to load -->
+	<record model="res.partner" id="res_partner_huxley">
+		<field name="name">Aldous Huxley</field>
+	</record>
+	<record model="library.book" id="library_book_bnw">
+		<field name="name">Brave New World</field>
+		<field name="author_ids" eval="[(4, ref('res_partner_huxley'))]" />
+		<field name="date_published">1932-01-01</field>
+	</record>
+</odoo>

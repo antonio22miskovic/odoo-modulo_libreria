@@ -1,7 +1,7 @@
 <odoo>
   <data>
     <!-- explicit list view definition -->
-    
+
     <record model="ir.ui.view" id="li_book_list">
       <field name="name">book list</field>
       <field name="model">li.book</field>
@@ -11,6 +11,7 @@
 				<field name="author_ids" widget="many2many_tags" />
 				<field name="publisher_id"/>
 				<field name="date_published"/>
+                <field name="publisher_country_id"/>
         	</tree>
       </field>
     </record>
@@ -45,6 +46,7 @@
 			    			<field name="author_ids" widget="many2many_tags" />
 			    			<field name="publisher_id" />
 			    			<field name="date_published" />
+                            <field name="publisher_country_id"/>
 			    		</group>
 
 			    		<group name="group_right">
@@ -52,7 +54,7 @@
 	    					<field name="active" />
 	    					<div class="container">
 	    						<div class="row">
-	    							<div class="col-sm-6">           
+	    							<div class="col-sm-6">
 	    								<field name="image" widget="image" heigt="10px"/>
 	    							</div>
 	    						</div>
@@ -64,21 +66,17 @@
     	</field>
     </record>
 
-  
-
-
     <record model="ir.actions.act_window" id="li_book_action_window">
       <field name="name">book</field>
       <field name="res_model">li.book</field>
       <field name="view_mode">tree,form</field>
     </record>
-    
-    
+
     <!-- menu categories -->
-    
+
     <menuitem name="librery" id="li_book_menu_1" parent="li_library_menu_1"  action="li_library_action_window"/>
     <menuitem name="Book" id="li_book_menu_2" parent="li_library_menu_1"  action="li_book_action_window"/>
-    
+
     <!-- actions -->
     <!--
     <menuitem name="List" id="addons_book/book.menu_1_list" parent="addons_book/book.menu_1"

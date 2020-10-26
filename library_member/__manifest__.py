@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "addons_library/library",
+    'name': "library_member",
 
     'summary': """
         Short (1 phrase/line) summary of the module's purpose, used as
@@ -20,22 +20,20 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+  'depends': ['base','library','mail'],
 
     # always loaded
     'data': [
         'security/ir.model.access.csv',
-        'views/views.xml',
-        'views/book.xml',
-        'views/templates.xml',
-        'views/book_list_template.xml',
+        'views/book_view.xml',
+        'security/library_security.xml',
+        'views/library_member.xml',
+        'views/library_menu.xml',
+        # 'views/views.xml',
+        # 'views/templates.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
-        # 'demo/demo.xml',
-        'data/res.partner.csv',
-        # 'data/library.member.csv',
-        'data/li.book.csv',
-        # 'data/book_demo.xml',
+        'demo/demo.xml',
     ],
 }

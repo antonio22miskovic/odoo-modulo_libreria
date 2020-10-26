@@ -1,0 +1,7 @@
+<odoo>
+	<!-- Modify Group name -->
+	<record id="library_library_group_user" model="res.groups">
+		<field name="name">Modulo de libreria </field>
+	</record>
+</odoo>
+
